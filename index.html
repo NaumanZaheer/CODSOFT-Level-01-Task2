@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>To-Do-List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="bgc" style="background-image: url(bgc.jpg)"></div>
+
+      <nav class="nav">
+        <div id="iconhead">
+          <i class="fa-sharp fa-solid fa-n"></i>
+          <i class="fa-solid fa-square"></i>
+        </div>
+        <div id="head">TO DO LIST</div>
+      </nav>
+
+      <div class="tasktable">
+        <div id="Entry">
+          <input type="text" placeholder="Enter any task here" id="inp" />
+          <div id="add" onclick="addbtn()">Add</div>
+        </div>
+        <div id="list">
+          <ul id="tasks"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const newstring = document.getElementById("inp");
+      function addbtn() {
+        const inputValue = newstring.value.trim();
+        const ul = document.getElementById("tasks");
+        if (inputValue === "") {
+          alert("Please Enter some text!");
+        } else {
+          const listItem = document.createElement("li");
+          listItem.classList.add("styled-list-item");
+
+          
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+
+          
+          const label = document.createElement("label");
+          label.textContent = inputValue;
+
+          
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "X";
+          deleteButton.classList.add("delete-button");
+
+          deleteButton.addEventListener("click", () => {
+            ul.removeChild(listItem);
+          });
+
+          listItem.appendChild(checkbox);
+          listItem.appendChild(label);
+          listItem.appendChild(deleteButton);
+
+          ul.appendChild(listItem);
+
+          newstring.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

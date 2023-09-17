@@ -1,0 +1,250 @@
+*{
+    margin: auto;
+}
+@font-face {
+    font-family: light;
+    src: url(Hind-Light.ttf);
+}
+@font-face {
+    font-family: medium;
+    src: url(Hind-Medium.ttf);
+}
+@font-face {
+    font-family: bold;
+    src: url(Hind-Bold.ttf);
+}
+
+#bgc{
+    
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.8;
+}
+body::before{
+    content: "";
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    opacity:0.4;
+}
+
+.nav{
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: #42b883;
+    top: 0;
+    height: 3rem;
+    z-index: 2;
+    
+}
+.fa-sharp{
+    font-size: 2rem;
+    color: #35495e;
+    
+}
+.fa-square{
+    font-size: 0.5rem;
+    color: white;
+}
+#iconhead{
+    position: absolute;
+    left: 3vh;
+    top: 1vh;
+    z-index: 2;
+}
+#head{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    z-index: 2;
+    font-family: medium;
+    font-size: 24px;
+}
+
+.tasktable{
+
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.154);
+    border-radius: 3vh;
+    height: 70vh;
+    width: 50vw;
+    position: relative;
+    top: 10vh;
+    box-shadow: 5px 5px 20px rgba(20, 20, 20, 0.2);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-wrap: wrap;
+    
+
+}
+
+#Entry{
+
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    box-sizing: content-box;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#Entry input{
+
+    position: absolute;
+    border: none;
+    box-sizing: border-box;
+    height: 3rem;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 18px;
+    top: 5vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.129);
+    padding-left: 5%;
+    
+}
+input:focus {
+    outline: none;
+}
+input::placeholder{
+    opacity: 0.5;
+}
+#add{
+
+    display: inline;
+    position: absolute;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    top: 5vh;
+    height: 3rem;
+    background-color: #42b883ea;
+    width: 10vh;
+    border-radius: 20px;
+    padding-top: 1.5vh;
+    padding-left: 1.5vw;
+    font-size: 18px;
+    color: white;
+    right: 10vw;
+
+}
+#add:hover{
+    background-color: #42b883;
+    cursor: pointer;
+}
+
+#list{
+
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    box-sizing: border-box;
+    width: 80%; 
+    height: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 130px;
+    padding-left: 10px;
+    padding-right: 20px;
+
+
+}
+
+#tasks{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 120px;
+    position: relative;
+}
+
+.styled-list-item {
+
+    position: relative;
+    list-style: none;
+    box-sizing: border-box;
+    height: 5rem;
+    border-radius: 20px;
+    font-size: 18px;
+    top: -15vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.129);
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.932);
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    
+}
+
+
+
+.styled-list-item input[type="checkbox"] {
+
+    margin-left: -15px;
+    margin-right: 20px; 
+    appearance: none; 
+    width: 24px; 
+    height: 24px; 
+    border-radius: 5px; 
+    border: 2px solid #42b883; 
+    cursor: pointer;
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+.styled-list-item input[type="checkbox"]:hover {
+
+    background-color: #42b883;
+}
+
+
+.styled-list-item input[type="checkbox"]:checked {
+    background-color: #42b883; 
+    border-color: #42b883; 
+    border: 6px double white;
+}
+
+
+
+
+.styled-list-item label {
+    flex-grow: 1; 
+}
+
+
+
+.styled-list-item .delete-button {
+    background-color: #ffffff; 
+    padding: 5px 10px;
+    border: none; 
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    font-size: 18px;
+    right: 3%;
+}
+
+.styled-list-item .delete-button:hover {
+    background-color: #e1e1e1;
+}
+
+.styled-list-item input[type="checkbox"]:checked + label {
+    text-decoration: line-through; 
+}
+
+
